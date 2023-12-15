@@ -6,7 +6,7 @@ router.get("/", (req, res)=>{
 
     pool.query(queryText)
         .then((result)=>{
-            console.log('in GET /todos resukt.rows', result.rows)
+            console.log('in GET /todos result.rows', result.rows)
             res.send(result.rows)
         })
         .catch((error)=>{

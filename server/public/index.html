@@ -13,5 +13,22 @@
     <h1>SQL TO-DO List</h1>
   </header>
 
+  <form >
+    <input 
+    data-testid="toDoTextInput" 
+    placeholder="Add new task here..."
+    id="textInput"
+    />
+    <button data-testid="submitButton" onclick="submitTask(event)">Add Task</button>
+  </form>
+  
+  <h3>Things To Do:</h3>
+  <ul id="itemList">
+    <li data-testid="toDoItem" class="completed">Complete this project
+      <button data-testid="completeButton" onclick="completeTask()">Complete</button>
+      <button data-testid="deleteButton" onclick="deleteTask(event)">❌</button>
+    </li>
+  </ul>
+
 </body>
 </html>

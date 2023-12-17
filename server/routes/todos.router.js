@@ -6,7 +6,7 @@ router.get("/", (req, res)=>{
 
     pool.query(queryText)
         .then((result)=>{
-            console.log('in GET /todos result.rows', result.rows)
+            // console.log('in GET /todos result.rows', result.rows)
             res.send(result.rows)
         })
         .catch((error)=>{
@@ -20,11 +20,11 @@ router.post("/", (req, res)=>{
     INSERT INTO "todos" ("text") VALUES ($1);
     `
     let queryParams = [req.body.text]
-    console.log('req.body', req.body)
+    // console.log('req.body', req.body)
 
     pool.query(queryText, queryParams)
         .then((result)=>{
-            console.log('in POST /todos')
+            // console.log('in POST /todos')
             res.sendStatus(201)
         })
         .catch((error)=>{
@@ -38,11 +38,11 @@ router.put("/:id", (req, res)=>{
     UPDATE "todos" SET "isComplete" = true WHERE "id"=$1;
     `
     let queryParams = [req.params.id]
-    console.log('req.params.id', req.params.id)
+    // console.log('req.params.id', req.params.id)
 
     pool.query(queryText, queryParams)
         .then((result)=>{
-            console.log('in PUT /todos')
+            // console.log('in PUT /todos')
             res.sendStatus(201)
         })
         .catch((error)=>{
@@ -56,15 +56,15 @@ router.delete("/:id", (req, res)=>{
     DELETE FROM "todos" WHERE "id" = $1;
     `
     let queryParams = [req.params.id]
-    console.log('req.params.id', req.params.id)
+    // console.log('req.params.id', req.params.id)
 
     pool.query(queryText, queryParams)
         .then((result)=>{
-            console.log('in PUT /todos')
+            // console.log('in DELETE /todos')
             res.sendStatus(200)
         })
         .catch((error)=>{
-            console.log('error in /PUT router', error)
+            console.log('error in /DELETE router', error)
             res.sendStatus(500)
         })
 })

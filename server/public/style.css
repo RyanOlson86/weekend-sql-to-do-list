@@ -1,3 +1,8 @@
 .completed {
-    background-color: gray;
+    color: green;
+    text-decoration: line-through;
+}
+
+body {
+    background-color: antiquewhite;
 }
